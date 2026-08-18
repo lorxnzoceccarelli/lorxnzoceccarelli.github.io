@@ -1,0 +1,322 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --page: #f4f6f5;
+  --surface: #ffffff;
+  --ink: #171b1f;
+  --navy: #55301f;
+  --slate: #4d5861;
+  --mist: #e9edeb;
+  --line: #cbd2ce;
+  --accent: #91451f;
+  --accent-strong: #6f3218;
+  --accent-soft: #f2ddd2;
+  --deep: #111518;
+  --shadow: rgba(19, 26, 30, 0.12);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #101214;
+  --surface: #1a1d20;
+  --ink: #f1eee8;
+  --navy: #e1ad79;
+  --slate: #bbb7af;
+  --mist: #141719;
+  --line: #3a3d40;
+  --accent: #f0a45d;
+  --accent-strong: #874c25;
+  --accent-soft: #302219;
+  --deep: #121518;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/*
+ * Keep semantic colors bound to the active theme at runtime. These rules also
+ * prevent a stale Tailwind development cache from freezing theme colors.
+ */
+.bg-page {
+  background-color: var(--page);
+}
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+.bg-mist {
+  background-color: var(--mist);
+}
+
+.bg-line {
+  background-color: var(--line);
+}
+
+.bg-deep {
+  background-color: var(--deep);
+}
+
+.bg-deep\/95 {
+  background-color: color-mix(in srgb, var(--deep) 95%, transparent);
+}
+
+.bg-accent-strong {
+  background-color: var(--accent-strong);
+}
+
+.bg-accent-soft {
+  background-color: var(--accent-soft);
+}
+
+.text-ink {
+  color: var(--ink);
+}
+
+.text-navy {
+  color: var(--navy);
+}
+
+.text-slate {
+  color: var(--slate);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-on-deep-accent {
+  color: #f0a45d;
+}
+
+.border-line {
+  border-color: var(--line);
+}
+
+.border-accent {
+  border-color: var(--accent);
+}
+
+.projects-section {
+  --projects-bg: var(--surface);
+  --projects-card: var(--mist);
+  --projects-text: var(--ink);
+  --projects-muted: var(--slate);
+  --projects-line: var(--line);
+  --projects-pill: var(--surface);
+  --projects-pill-text: var(--navy);
+  --projects-button: var(--deep);
+  --projects-button-text: #ffffff;
+  --projects-accent: var(--accent);
+  background-color: var(--projects-bg);
+  color: var(--projects-text);
+}
+
+.projects-section .text-white,
+.projects-text {
+  color: var(--projects-text);
+}
+
+.projects-section .text-slate-200,
+.projects-muted {
+  color: var(--projects-muted);
+}
+
+.projects-section .eyebrow-on-dark {
+  --eyebrow-color: var(--projects-accent);
+}
+
+.projects-button {
+  background-color: var(--projects-button);
+  color: var(--projects-button-text);
+}
+
+.projects-button:hover {
+  background-color: var(--accent-strong);
+}
+
+.projects-card {
+  border-color: var(--projects-line);
+  background-color: var(--projects-card);
+}
+
+.projects-chip,
+.projects-empty,
+.projects-divider {
+  border-color: var(--projects-line);
+}
+
+.projects-tech {
+  background-color: var(--projects-pill);
+  color: var(--projects-pill-text);
+}
+
+.projects-accent-link {
+  color: var(--projects-accent);
+}
+
+.projects-accent-link:hover {
+  color: var(--projects-text);
+}
+
+html[data-theme="dark"] .projects-section {
+  --projects-bg: var(--deep);
+  --projects-card: color-mix(in srgb, white 6%, var(--deep));
+  --projects-text: #ffffff;
+  --projects-muted: #d7dde2;
+  --projects-line: rgba(255, 255, 255, 0.16);
+  --projects-pill: rgba(255, 255, 255, 0.1);
+  --projects-pill-text: #e9dfd4;
+  --projects-button: #ffffff;
+  --projects-button-text: #1d2329;
+  --projects-accent: #f0a45d;
+}
+
+html[data-theme="dark"] .projects-button:hover {
+  background-color: #f3e2d3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M48 0H0V48' fill='none' stroke='%23ffffff' stroke-opacity='.12' stroke-width='1'/%3E%3C/svg%3E");
+  opacity: 0.35;
+}
+
+.hero-scan {
+  position: absolute;
+  right: 8%;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: var(--accent);
+  opacity: 0.2;
+  transform-origin: top;
+  animation: scan-line 5s ease-in-out infinite;
+}
+
+.hero-marker {
+  position: absolute;
+  display: block;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  opacity: 0.65;
+  animation: marker-pulse 3.5s ease-out infinite;
+}
+
+.hero-marker-one {
+  right: 18%;
+  top: 22%;
+  height: 0.65rem;
+  width: 0.65rem;
+}
+
+.hero-marker-two {
+  bottom: 15%;
+  left: 7%;
+  height: 0.45rem;
+  width: 0.45rem;
+  animation-delay: 1.2s;
+}
+
+.hero-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@keyframes scan-line {
+  0%,
+  100% {
+    transform: scaleY(0.25);
+    opacity: 0.08;
+  }
+
+  50% {
+    transform: scaleY(0.8);
+    opacity: 0.32;
+  }
+}
+
+@keyframes marker-pulse {
+  0%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.25;
+  }
+
+  45% {
+    transform: scale(1.25);
+    opacity: 0.8;
+  }
+}
+
+html[data-theme="dark"] .bg-white.text-ink {
+  color: #1d2329 !important;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.eyebrow {
+  color: var(--eyebrow-color, var(--accent));
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.eyebrow-on-dark {
+  --eyebrow-color: #f0a45d;
+}
+
+.eyebrow-on-strong {
+  --eyebrow-color: #ffd7b3;
+}
+
+.section-rule {
+  height: 1px;
+  background: var(--line);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
