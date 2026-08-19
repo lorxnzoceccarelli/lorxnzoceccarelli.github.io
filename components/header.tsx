@@ -51,7 +51,7 @@ export default function Header() {
           <div
             role="group"
             aria-label={t.header.languageSelector}
-            className="inline-flex items-center rounded-full border border-white/20 p-0.5"
+            className="inline-flex items-center gap-0.5 rounded-full border border-white/20 p-0.5"
           >
             <Languages className="ml-2 size-3.5 text-slate-200" aria-hidden="true" />
             <button

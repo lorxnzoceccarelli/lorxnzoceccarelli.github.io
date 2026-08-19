@@ -99,9 +99,9 @@ html[data-theme="dark"] {
 }
 
 .language-option {
-  min-width: 2rem;
+  min-width: 2.35rem;
   border-radius: 999px;
-  padding: 0.35rem 0.45rem;
+  padding: 0.35rem 0.55rem;
   color: #d7dde2;
   font-size: 0.68rem;
   font-weight: 700;

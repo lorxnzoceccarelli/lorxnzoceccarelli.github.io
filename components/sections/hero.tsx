@@ -56,7 +56,7 @@ export default function Hero() {
             </a>
             <a
               href={siteConfig.cvPath}
-              download
+              download="CV-LorenzoMCeccarelli.pdf"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm font-bold text-white transition-colors duration-150 hover:border-white hover:bg-white/10"
             >
               <Download className="size-4" aria-hidden="true" />
