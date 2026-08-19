@@ -6,6 +6,7 @@ Portfolio personale di **Lorenzo M. Ceccarelli**, AI Software Engineer. Il sito 
 
 - Design responsive per smartphone, tablet e desktop
 - Dark mode predefinita con switch per la light mode
+- Contenuti completi in inglese e italiano con selettore della lingua
 - Preferenza del tema salvata nel browser
 - Navigazione fissa con menu mobile accessibile
 - Sezioni dedicate a profilo, esperienza, skills, progetti e formazione

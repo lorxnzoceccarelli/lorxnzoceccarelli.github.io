@@ -1,8 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowDown, ArrowUpRight, Download, Github } from "lucide-react";
+import { useLanguage } from "@/components/language-provider";
 import { siteConfig } from "@/data/site";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section id="home" className="relative isolate scroll-mt-24 overflow-hidden bg-deep pt-32 text-white sm:pt-40">
       <div className="hero-grid" aria-hidden="true" />
@@ -13,7 +18,7 @@ export default function Hero() {
       <div className="absolute right-10 top-24 hidden size-3 rounded-full bg-accent lg:block" aria-hidden="true" />
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:pb-28">
         <div className="relative z-10">
-          <p className="eyebrow eyebrow-on-dark">Portfolio · Full-stack · AI</p>
+          <p className="eyebrow eyebrow-on-dark">{t.hero.eyebrow}</p>
           <h1 className="mt-6 max-w-4xl text-balance text-5xl font-bold leading-[0.98] sm:text-7xl lg:text-8xl">
             Lorenzo M.<br />
             <span className="text-[#d4c3b2]">Ceccarelli</span>
@@ -23,7 +28,7 @@ export default function Hero() {
             <p className="text-xl font-medium text-white sm:text-2xl">{siteConfig.role}</p>
           </div>
           <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-slate-200 sm:text-xl">
-            Progetto software, WebApp e strumenti intelligenti per trasformare idee e processi in soluzioni concrete, con AI Agent e sviluppo multipiattaforma.
+            {t.hero.description}
           </p>
           <div className="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-slate-300">
             <span className="hero-label">WEB</span>
@@ -36,7 +41,7 @@ export default function Hero() {
               href="#profilo"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-ink transition-colors duration-150 hover:bg-[#f3e2d3]"
             >
-              Scopri il mio percorso
+              {t.hero.journeyCta}
               <ArrowDown className="size-4" aria-hidden="true" />
             </a>
             <a
@@ -46,7 +51,7 @@ export default function Hero() {
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm font-bold text-white transition-colors duration-150 hover:border-white hover:bg-white/10"
             >
               <Github className="size-4" aria-hidden="true" />
-              Visualizza GitHub
+              {t.hero.githubCta}
               <ArrowUpRight className="size-4" aria-hidden="true" />
             </a>
             <a
@@ -55,7 +60,7 @@ export default function Hero() {
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm font-bold text-white transition-colors duration-150 hover:border-white hover:bg-white/10"
             >
               <Download className="size-4" aria-hidden="true" />
-              Scarica CV
+              {t.hero.cvCta}
             </a>
           </div>
         </div>
@@ -66,7 +71,7 @@ export default function Hero() {
           <div className="relative aspect-[0.88] overflow-hidden rounded-[1.6rem] border border-white/25 bg-slate-300">
             <Image
               src="/images/lorenzo-portrait.png"
-              alt="Ritratto di Lorenzo M. Ceccarelli"
+              alt={t.hero.portraitAlt}
               fill
               priority
               sizes="(max-width: 1024px) 80vw, 36vw"
@@ -74,8 +79,8 @@ export default function Hero() {
             />
           </div>
           <div className="absolute -bottom-9 -right-5 rounded-xl bg-white px-4 py-3 text-ink shadow-soft sm:-right-8">
-            <p className="text-[0.65rem] font-bold uppercase text-[#66717c]">Focus</p>
-            <p className="mt-1 text-sm font-bold">Build · Automate · Learn</p>
+            <p className="text-[0.65rem] font-bold uppercase text-[#66717c]">{t.hero.focusLabel}</p>
+            <p className="mt-1 text-sm font-bold">{t.hero.focusValue}</p>
           </div>
         </div>
       </div>
